@@ -49,6 +49,7 @@ def show_time():
         txt_sep.set(':')
     else:
         txt_sep.set(' ')
+        
     txt_hour.set(hour)
     txt_minute.set(minute)
     txt_date.set(day+'/'+month+'/'+year)
@@ -75,7 +76,7 @@ root.configure(background='black')
 root.bind("x", quit)
 root.after(1000, show_time)
 
-# Set the end date and time for the countdown
+
 
 fnt_date = font.Font(family='Helvetica', size=60, weight='bold')
 txt_date = StringVar()
@@ -85,7 +86,7 @@ lbl_date.place(relx=0.5, rely=0.5, anchor=CENTER)
 fnt_big = font.Font(family='Helvetica', size=200, weight='bold')
 txt_sep = StringVar()
 lbl_sep = ttk.Label(root, textvariable=txt_sep, font=fnt_big, foreground="white", background="black")
-lbl_sep.place(relx=0.5, rely=0.2, anchor=CENTER)
+lbl_sep.place(relx=0.5, rely=0.16, anchor=CENTER)
 txt_hour = StringVar()
 lbl_hour = ttk.Label(root, textvariable=txt_hour, font=fnt_big, foreground="white", background="black")
 lbl_hour.place(relx=0.25, rely=0.2, anchor=CENTER)
