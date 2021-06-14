@@ -5,7 +5,6 @@
 
 # pip install requests
 
-
 from tkinter import *
 from tkinter import ttk
 from tkinter import font
@@ -21,6 +20,10 @@ def quit(*args):
     root.destroy()
     
 def show_time():
+    
+    
+
+
     if datetime.datetime.now().second%2==0:
         cont=True
     else:
@@ -38,7 +41,10 @@ def show_time():
         
     year=str(datetime.date.today().year)
     
-    hour=str(datetime.datetime.now().hour)
+    if datetime.datetime.now().hour<10:
+        hour='0'+str(datetime.datetime.now().hour)
+    else:
+        hour=str(datetime.datetime.now().hour)
     
     if datetime.datetime.now().minute<10:
         minute='0'+str(datetime.datetime.now().minute)
@@ -73,7 +79,7 @@ def show_time():
 root = Tk()
 root.attributes("-fullscreen", True)
 root.configure(background='black')
-root.bind("x", quit)
+root.bind('<Escape>', quit)
 root.after(1000, show_time)
 
 
@@ -85,7 +91,7 @@ lbl_date.place(relx=0.5, rely=0.5, anchor=CENTER)
 
 fnt_big = font.Font(family='Helvetica', size=200, weight='bold')
 txt_sep = StringVar()
-lbl_sep = ttk.Label(root, textvariable=txt_sep, font=fnt_big, foreground="white", background="black")
+lbl_sep = ttk.Label(root, textvariable=txt_sep, font=fnt_big, foreground='white', background="black")
 lbl_sep.place(relx=0.5, rely=0.16, anchor=CENTER)
 txt_hour = StringVar()
 lbl_hour = ttk.Label(root, textvariable=txt_hour, font=fnt_big, foreground="white", background="black")
@@ -105,5 +111,11 @@ lbl_notice2.place(relx=0.5, rely=0.8, anchor=CENTER)
 txt_notice3 = StringVar()
 lbl_notice3 = ttk.Label(root, textvariable=txt_notice3, font=fnt_notice, foreground="white", background="black")
 lbl_notice3.place(relx=0.5, rely=0.9, anchor=CENTER)
+
+
+logo=PhotoImage(file='logo.png')
+logo_s=Label(image=logo)
+logo_s.place(relx=0, rely=1, anchor=SW)
+#logo_s.pack()
 
 root.mainloop()
