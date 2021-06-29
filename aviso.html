@@ -3,14 +3,20 @@
 <head>
     <title></title>
     <script type="text/javascript">
-        function changetext() {
-            document.getElementById("target").innerHTML = document.getElementById("campo").value;
+        function changetext1() {
+            document.getElementById("target1").innerHTML = document.getElementById("campo1").value;
+        }
+        function changetext2() {
+            document.getElementById("target2").innerHTML = document.getElementById("campo2").value;
         }
     </script>
 </head>
 <body>
-    <h1 id="target">Texto</h1>
-    <input type="text" id="campo">
+    <h1 id="target1"></h1>
+    <input type="text" id="campo1">
+    <input type="button" onclick="changetext()">
+    <h1 id="target1"></h1>
+    <input type="text" id="campo1">
     <input type="button" onclick="changetext()">
 </body>
 </html>
